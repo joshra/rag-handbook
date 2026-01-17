@@ -42,7 +42,7 @@ EXTRAS: dict[str, ChapterExtras] = {
             "00-導讀/00-手冊使用方式.md",
             "00-導讀/01-名詞表與縮寫.md",
             "01-總覽（從0到上線的RAG藍圖）/02-端到端資料流與系統架構.md",
-            "10-附錄/01-Checklist（上線前-事故後）.md",
+            "11-附錄/01-Checklist（上線前-事故後）.md",
         ],
     ),
     "00-導讀/00-手冊使用方式.md": ChapterExtras(
@@ -60,7 +60,7 @@ EXTRAS: dict[str, ChapterExtras] = {
             "00-導讀/01-名詞表與縮寫.md",
             "01-總覽（從0到上線的RAG藍圖）/03-成功標準與KPI（正確率-覆蓋率-成本-延遲）.md",
             "07-工程化與上線（Django+Postgres實作）/03-Django整合：API設計-背景任務-快取-速率限制.md",
-            "10-附錄/01-Checklist（上線前-事故後）.md",
+            "11-附錄/01-Checklist（上線前-事故後）.md",
         ],
     ),
     "00-導讀/01-名詞表與縮寫.md": ChapterExtras(
@@ -110,7 +110,7 @@ EXTRAS: dict[str, ChapterExtras] = {
         further_reads=[
             "01-總覽（從0到上線的RAG藍圖）/03-成功標準與KPI（正確率-覆蓋率-成本-延遲）.md",
             "05-生成策略（把答案變可靠）/02-Prompt模板（可回答-不可回答-追問澄清）.md",
-            "10-附錄/02-FAQ（常見誤解與坑）.md",
+            "11-附錄/02-FAQ（常見誤解與坑）.md",
         ],
     ),
     "01-總覽（從0到上線的RAG藍圖）/02-端到端資料流與系統架構.md": ChapterExtras(
@@ -372,7 +372,7 @@ EXTRAS: dict[str, ChapterExtras] = {
         ],
         further_reads=[
             "06-評估與觀測（讓工程團隊能迭代）/03-可觀測性：log-trace-命中率-失敗分類.md",
-            "10-附錄/01-Checklist（上線前-事故後）.md",
+            "11-附錄/01-Checklist（上線前-事故後）.md",
         ],
     ),
     "06-評估與觀測（讓工程團隊能迭代）/03-可觀測性：log-trace-命中率-失敗分類.md": ChapterExtras(
@@ -547,7 +547,7 @@ EXTRAS: dict[str, ChapterExtras] = {
             "- 把風險（越權/成本/延遲/品質）當成里程碑守門條件，而不是事後補洞。",
         ],
         further_reads=[
-            "10-附錄/01-Checklist（上線前-事故後）.md",
+            "11-附錄/01-Checklist（上線前-事故後）.md",
             "06-評估與觀測（讓工程團隊能迭代）/02-線上評估：A-B-回饋循環-人工標註流程.md",
         ],
     ),
@@ -583,7 +583,7 @@ EXTRAS: dict[str, ChapterExtras] = {
             "02-資料工程（最容易踩雷的地方）/03-Metadata與權限欄位設計（ACL-租戶隔離）.md",
         ],
     ),
-    "10-附錄/01-Checklist（上線前-事故後）.md": ChapterExtras(
+    "11-附錄/01-Checklist（上線前-事故後）.md": ChapterExtras(
         map_lines=[
             "- **適合用在**：上線驗收與事故復盤，快速補齊治理缺口。",
             "- **你會做出**：一份可直接拿來做 release gate 的檢查清單。",
@@ -599,7 +599,7 @@ EXTRAS: dict[str, ChapterExtras] = {
             "07-工程化與上線（Django+Postgres實作）/06-版本化與可重現：資料-索引-embedding-prompt版本.md",
         ],
     ),
-    "10-附錄/02-FAQ（常見誤解與坑）.md": ChapterExtras(
+    "11-附錄/02-FAQ（常見誤解與坑）.md": ChapterExtras(
         map_lines=[
             "- **適合用在**：團隊討論卡關時，快速對準常見誤解與真實工程成本。",
             "- **你會做出**：一份「先別做錯」的防踩雷清單。",
@@ -612,10 +612,10 @@ EXTRAS: dict[str, ChapterExtras] = {
         ],
         further_reads=[
             "00-導讀/01-名詞表與縮寫.md",
-            "10-附錄/01-Checklist（上線前-事故後）.md",
+            "11-附錄/01-Checklist（上線前-事故後）.md",
         ],
     ),
-    "10-附錄/03-參考文獻與延伸閱讀.md": ChapterExtras(
+    "11-附錄/03-參考文獻與延伸閱讀.md": ChapterExtras(
         map_lines=[
             "- **適合用在**：需要進一步深入官方文件、或安排團隊讀書會路徑時。",
             "- **你會做出**：一份可持續擴充的閱讀清單與討論題目。",

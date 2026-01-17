@@ -45,3 +45,4 @@
 
 - [03-可觀測性：log-trace-命中率-失敗分類](../06-評估與觀測（讓工程團隊能迭代）/03-可觀測性：log-trace-命中率-失敗分類.md)
 - [06-版本化與可重現：資料-索引-embedding-prompt版本](../07-工程化與上線（Django+Postgres實作）/06-版本化與可重現：資料-索引-embedding-prompt版本.md)
+
