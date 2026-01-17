@@ -1,5 +1,8 @@
 site_name: RAG 手冊（從初學到可上線）
 site_description: 以 Python + Django + PostgreSQL 場景落地主流 RAG 的工程手冊
+site_url: https://joshra.github.io/rag-handbook/
+repo_url: https://github.com/joshra/rag-handbook
+repo_name: joshra/rag-handbook
 
 # 直接用現有的手冊資料夾當 docs 來源，避免搬檔/重構
 docs_dir: rag-handbook
