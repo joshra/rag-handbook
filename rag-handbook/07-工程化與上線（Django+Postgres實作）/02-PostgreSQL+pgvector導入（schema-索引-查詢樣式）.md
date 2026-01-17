@@ -1,4 +1,4 @@
-# 02-PostgreSQL + pgvector 落地（schema / 索引 / 查詢樣式）
+# 02-PostgreSQL + pgvector 導入（schema / 索引 / 查詢樣式）
 
 ## 你將學到（Learning Objectives）
 
@@ -9,7 +9,7 @@
 
 ## 本章地圖
 
-- **適合用在**：要用 Postgres 先落地向量檢索，且查詢形狀可控、ACL 能治理時。
+- **適合用在**：要用 Postgres 先導入向量檢索，且查詢形狀可控、ACL 能治理時。
 - **你會做出**：可上線的 schema、索引、查詢樣式（含混合檢索）與維運準則。
 - **最可能踩雷**：索引沒用上、filter 破壞索引、k 值/維度導致效能爆炸、ACL 只在應用層後過濾。
 
@@ -323,7 +323,7 @@ LIMIT $8;
 
 ### 4) 兩階段：DB 先召回，應用層 rerank
 
-在 pgvector + Postgres 的落地路線裡，常見的高效果路徑是：
+在 pgvector + Postgres 的導入路線裡，常見的高效果路徑是：
 
 - 第一階段（DB）：用向量/混合檢索召回 **候選 50~200**
 - 第二階段（模型）：用 reranker（Cross-Encoder）把候選重排，取 top-k
@@ -404,7 +404,7 @@ DB 要做的事很單純：回傳 **可引用的 chunk** 與 **可觀測的距�
 
 ## 本章小結
 
-- pgvector 是「先用 DB 也能做」的務實落地點，但要清楚它的查詢形狀與限制。
+- pgvector 是「先用 DB 也能做」的務實起點，但要清楚它的查詢形狀與限制。
 - schema 必須為可回放與治理服務：來源、版本、ACL、title_path 等欄位不能省。
 - 上線前先固定：embedding 維度、相似度定義（L2/內積/cosine）、查詢形狀（WHERE + ORDER BY + LIMIT）。
 - 任何檢索都必須把 `tenant_id` 與 ACL 變成 SQL filter；不要靠應用層後過濾。

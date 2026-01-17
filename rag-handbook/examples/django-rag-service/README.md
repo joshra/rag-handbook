@@ -1,6 +1,6 @@
 # django-rag-service（最小骨架）
 
-> 目的：提供一個「**不綁定 LLM 供應商**」的 Django + PostgreSQL（pgvector）最小落地骨架，方便你把手冊概念帶回既有系統。
+> 目的：提供一個「**不綁定 LLM 供應商**」的 Django + PostgreSQL（pgvector）最小導入骨架，方便你把手冊概念帶回既有系統。
 
 ## 這個骨架包含什麼
 

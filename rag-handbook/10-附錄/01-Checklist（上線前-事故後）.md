@@ -7,7 +7,7 @@
   - 清理/去重規則可重跑，且有版本（cleaner_version）
   - chunk 必備欄位齊全（doc_id/source_uri/title_path/acl/version）
 - **安全**
-  - tenant/ACL filter 在檢索層落地（DB 查詢內）
+  - tenant/ACL filter 在檢索層導入（DB 查詢內）
   - 有提示注入基本防線（把證據當資料、強制引用）
   - 有 PII/敏感等級策略（至少能避免明顯外洩）
 - **品質**

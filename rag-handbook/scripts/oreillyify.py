@@ -30,12 +30,12 @@ EXTRAS: dict[str, ChapterExtras] = {
     "README.md": ChapterExtras(
         map_lines=[
             "- **適合用在**：工程團隊要把 RAG 從 0 做到可上線（不綁定特定 LLM 供應商）。",
-            "- **你會做出**：一套可維運的 ingest/index/query 流程與評估迭代閉環。",
+            "- **你會做出**：一套可維運的 ingest/index/query 流程與評估迭代循環。",
             "- **最可能踩雷**：只做向量庫、不做資料/權限/觀測/版本化，最後「跑得動但不可用」。",
         ],
         summary_lines=[
             "- 本手冊的主線是「資料工程 → 檢索 → 生成可靠性 → 評估觀測 → 工程化上線」。",
-            "- 以 Django + PostgreSQL + pgvector 作為可落地的起點，並明確標出可替換介面（LLM/Embedding/Rerank）。",
+            "- 以 Django + PostgreSQL + pgvector 作為可直接導入的起點，並明確標出可替換介面（LLM/Embedding/Rerank）。",
             "- 每章以可交付工件與責任邊界為核心，方便做 code review 與上線驗收。",
         ],
         further_reads=[
@@ -82,14 +82,14 @@ EXTRAS: dict[str, ChapterExtras] = {
     ),
     "00-導讀/02-主流工具版圖（LangChain-LlamaIndex-Haystack）.md": ChapterExtras(
         map_lines=[
-            "- **適合用在**：要選框架或評估是否需要框架時，用組件視角對齊需求。",
+            "- **適合用在**：要選框架或評估是否需要框架時，用組件視角對準需求。",
             "- **你會做出**：框架無關的模組拆分與「可替換介面」思維。",
             "- **最可能踩雷**：先被框架抽象綁住，導致除錯與上線治理困難。",
         ],
         summary_lines=[
             "- 不論框架，RAG 都可拆成 loader/cleaner/chunker/embedder/store/retriever/rerank/answerer。",
             "- 框架的價值在「組裝效率」與「生態整合」，代價是抽象成本與除錯複雜度。",
-            "- 先用清楚的 Python 介面與可觀測資料流落地，再決定要不要引入框架加速。",
+            "- 先用清楚的 Python 介面與可觀測資料流導入，再決定要不要引入框架加速。",
         ],
         further_reads=[
             "07-工程化與上線（Django+Postgres實作）/01-系統切分：Ingest-Index-Retrieve-Generate服務邊界.md",
@@ -188,7 +188,7 @@ EXTRAS: dict[str, ChapterExtras] = {
         ],
         summary_lines=[
             "- metadata 的目的不是「補充資訊」，而是讓檢索可控：filter、排序、回放都靠它。",
-            "- 權限/租戶隔離必須在檢索查詢內落地，做到「拿不到」而非「拿到再丟掉」。",
+            "- 權限/租戶隔離必須在檢索查詢內導入，做到「拿不到」而非「拿到再丟掉」。",
             "- 版本欄位是回歸測試與事故回放的核心；沒有版本就沒有可重現性。",
         ],
         further_reads=[
@@ -204,7 +204,7 @@ EXTRAS: dict[str, ChapterExtras] = {
             "- **最可能踩雷**：只換模型不修資料；embedding 版本混用導致回歸失真。",
         ],
         summary_lines=[
-            "- embedding 選型要跟語料與 query 分佈對齊；中文常見問題在斷詞、專有名詞與符號。",
+            "- embedding 選型要跟語料與 query 分佈對準；中文常見問題在斷詞、專有名詞與符號。",
             "- 一定要把 embedding 的 model/dim/version 寫進資料，否則無法回放與回歸。",
             "- 批次化與快取通常比「換更大模型」更能穩定成本與延遲。",
         ],
@@ -216,7 +216,7 @@ EXTRAS: dict[str, ChapterExtras] = {
     "03-檢索基礎（向量化-索引-混合檢索）/02-向量索引與相似度（cosine-dot-L2）.md": ChapterExtras(
         map_lines=[
             "- **適合用在**：要理解相似度/索引型別，或查詢很慢、命中怪怪時。",
-            "- **你會做出**：相似度選擇與索引策略（含 pgvector 落地注意事項）。",
+            "- **你會做出**：相似度選擇與索引策略（含 pgvector 導入注意事項）。",
             "- **最可能踩雷**：度量與正規化搞錯、索引未命中、top-k 設太大。",
         ],
         summary_lines=[
@@ -225,7 +225,7 @@ EXTRAS: dict[str, ChapterExtras] = {
             "- 先用小規模壓測驗證延遲與 recall，再決定要不要升級專用向量庫。",
         ],
         further_reads=[
-            "07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector落地（schema-索引-查詢樣式）.md",
+            "07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector導入（schema-索引-查詢樣式）.md",
             "04-檢索策略（把找回來的內容變準）/02-top-k-filter-MMR-多路召回.md",
         ],
     ),
@@ -242,7 +242,7 @@ EXTRAS: dict[str, ChapterExtras] = {
         ],
         further_reads=[
             "04-檢索策略（把找回來的內容變準）/03-Rerank（二階段檢索）與常見模型.md",
-            "07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector落地（schema-索引-查詢樣式）.md",
+            "07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector導入（schema-索引-查詢樣式）.md",
         ],
     ),
     "04-檢索策略（把找回來的內容變準）/01-Query改寫-擴展（rewrite-expand）.md": ChapterExtras(
@@ -270,7 +270,7 @@ EXTRAS: dict[str, ChapterExtras] = {
         ],
         summary_lines=[
             "- top-k 是 recall 與成本/延遲的交易：先用起手式，再用離線集與 trace 調參。",
-            "- filters 分成安全（必套用）與產品（可選）；安全 filter 必須在查詢內落地。",
+            "- filters 分成安全（必套用）與產品（可選）；安全 filter 必須在查詢內導入。",
             "- 多路召回先求不漏，再靠 rerank 求變準；合併去重是穩定性的關鍵細節。",
         ],
         further_reads=[
@@ -359,7 +359,7 @@ EXTRAS: dict[str, ChapterExtras] = {
             "07-工程化與上線（Django+Postgres實作）/06-版本化與可重現：資料-索引-embedding-prompt版本.md",
         ],
     ),
-    "06-評估與觀測（讓工程團隊能迭代）/02-線上評估：A-B-回饋閉環-人工標註流程.md": ChapterExtras(
+    "06-評估與觀測（讓工程團隊能迭代）/02-線上評估：A-B-回饋循環-人工標註流程.md": ChapterExtras(
         map_lines=[
             "- **適合用在**：要把線上流量變成可用回饋，支援 A/B 與人工標註時。",
             "- **你會做出**：回饋收集、抽樣標註、A/B 與回歸題庫回補流程。",
@@ -367,7 +367,7 @@ EXTRAS: dict[str, ChapterExtras] = {
         ],
         summary_lines=[
             "- 線上評估的關鍵是歸因：每次回答都要能對到資料/索引/模型/prompt 版本。",
-            "- 回饋閉環要可執行：收集 → 抽樣 → 標註 → 失敗分類 → 回補題庫 → 回歸。",
+            "- 回饋循環要可執行：收集 → 抽樣 → 標註 → 失敗分類 → 回補題庫 → 回歸。",
             "- A/B 要先定義守門指標（越權/錯誤率/P95/成本），再談提升準確率。",
         ],
         further_reads=[
@@ -407,14 +407,14 @@ EXTRAS: dict[str, ChapterExtras] = {
             "06-評估與觀測（讓工程團隊能迭代）/03-可觀測性：log-trace-命中率-失敗分類.md",
         ],
     ),
-    "07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector落地（schema-索引-查詢樣式）.md": ChapterExtras(
+    "07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector導入（schema-索引-查詢樣式）.md": ChapterExtras(
         map_lines=[
-            "- **適合用在**：要用 Postgres 先落地向量檢索，並確保查詢形狀可控時。",
+            "- **適合用在**：要用 Postgres 先導入向量檢索，並確保查詢形狀可控時。",
             "- **你會做出**：schema、索引、查詢樣式與效能/限制的工程準則。",
             "- **最可能踩雷**：索引沒用上、filter 破壞索引、k 值/維度導致效能爆炸。",
         ],
         summary_lines=[
-            "- pgvector 是「先用 DB 也能做」的務實落地點，但要清楚它的查詢形狀與限制。",
+            "- pgvector 是「先用 DB 也能做」的務實起點，但要清楚它的查詢形狀與限制。",
             "- schema 必須為可回放與治理服務：來源、版本、ACL、title_path 等欄位不能省。",
             "- 先用真實 workload 壓測，再決定是否需要專用向量庫或分離服務。",
         ],
@@ -535,7 +535,7 @@ EXTRAS: dict[str, ChapterExtras] = {
             "03-檢索基礎（向量化-索引-混合檢索）/03-混合檢索（BM25+向量）與何時要用.md",
         ],
     ),
-    "09-導入既有場景（工程團隊落地配方）/01-導入路線圖（PoC→試點→正式）.md": ChapterExtras(
+    "09-導入既有場景（工程團隊導入配方）/01-導入路線圖（PoC→試點→正式）.md": ChapterExtras(
         map_lines=[
             "- **適合用在**：要規劃導入節奏，避免 PoC 永遠卡在 PoC 時。",
             "- **你會做出**：PoC→試點→正式的交付物、風險與驗收節點。",
@@ -548,13 +548,13 @@ EXTRAS: dict[str, ChapterExtras] = {
         ],
         further_reads=[
             "10-附錄/01-Checklist（上線前-事故後）.md",
-            "06-評估與觀測（讓工程團隊能迭代）/02-線上評估：A-B-回饋閉環-人工標註流程.md",
+            "06-評估與觀測（讓工程團隊能迭代）/02-線上評估：A-B-回饋循環-人工標註流程.md",
         ],
     ),
-    "09-導入既有場景（工程團隊落地配方）/02-文件型知識庫配方（企業內規-手冊-規格）.md": ChapterExtras(
+    "09-導入既有場景（工程團隊導入配方）/02-文件型知識庫配方（企業內規-手冊-規格）.md": ChapterExtras(
         map_lines=[
             "- **適合用在**：企業內規/手冊/規格等「文件型知識」要導入 RAG 時。",
-            "- **你會做出**：文件 ingest、切分、引用與權限的落地配方。",
+            "- **你會做出**：文件 ingest、切分、引用與權限的導入配方。",
             "- **最可能踩雷**：文件版本與例外條款被切斷；引用回不到條款位置。",
         ],
         summary_lines=[
@@ -567,7 +567,7 @@ EXTRAS: dict[str, ChapterExtras] = {
             "05-生成策略（把答案變可靠）/01-Context組裝（packing）與引用格式.md",
         ],
     ),
-    "09-導入既有場景（工程團隊落地配方）/03-研發型知識庫配方（issues-PRD-設計文-ADR）.md": ChapterExtras(
+    "09-導入既有場景（工程團隊導入配方）/03-研發型知識庫配方（issues-PRD-設計文-ADR）.md": ChapterExtras(
         map_lines=[
             "- **適合用在**：issues/PRD/設計文/ADR 這類研發知識要檢索與引用時。",
             "- **你會做出**：以版本與連結關係為核心的索引與檢索策略。",
@@ -601,7 +601,7 @@ EXTRAS: dict[str, ChapterExtras] = {
     ),
     "10-附錄/02-FAQ（常見誤解與坑）.md": ChapterExtras(
         map_lines=[
-            "- **適合用在**：團隊討論卡關時，快速對齊常見誤解與真實工程成本。",
+            "- **適合用在**：團隊討論卡關時，快速對準常見誤解與真實工程成本。",
             "- **你會做出**：一份「先別做錯」的防踩雷清單。",
             "- **最可能踩雷**：把 RAG 當成向量庫專案；忽略權限與可回放。",
         ],
@@ -619,15 +619,15 @@ EXTRAS: dict[str, ChapterExtras] = {
         map_lines=[
             "- **適合用在**：需要進一步深入官方文件、或安排團隊讀書會路徑時。",
             "- **你會做出**：一份可持續擴充的閱讀清單與討論題目。",
-            "- **最可能踩雷**：只堆連結不給閱讀順序；團隊看完仍無法落地。",
+            "- **最可能踩雷**：只堆連結不給閱讀順序；團隊看完仍無法導入。",
         ],
         summary_lines=[
-            "- 延伸閱讀以「可落地」為優先：官方文件、關鍵章節串讀、讀書會題目。",
+            "- 延伸閱讀以「可直接導入」為優先：官方文件、關鍵章節串讀、讀書會題目。",
             "- 建議以本手冊的主線順序閱讀：先地基（資料/切分/權限），再做準（檢索/重排），最後做穩（觀測/版本/上線）。",
             "- 團隊討論題目應能對應到你們的 query 分佈、資料更新與權限模型。",
         ],
         further_reads=[
-            "07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector落地（schema-索引-查詢樣式）.md",
+            "07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector導入（schema-索引-查詢樣式）.md",
             "03-檢索基礎（向量化-索引-混合檢索）/03-混合檢索（BM25+向量）與何時要用.md",
         ],
     ),

@@ -48,7 +48,7 @@
 
 - 不論框架，RAG 都可拆成 loader/cleaner/chunker/embedder/store/retriever/rerank/answerer。
 - 框架的價值在「組裝效率」與「生態整合」，代價是抽象成本與除錯複雜度。
-- 先用清楚的 Python 介面與可觀測資料流落地，再決定要不要引入框架加速。
+- 先用清楚的 Python 介面與可觀測資料流導入，再決定要不要引入框架加速。
 
 ## 延伸閱讀
 

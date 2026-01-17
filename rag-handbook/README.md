@@ -16,7 +16,7 @@
 - **能設計資料切分與 metadata**，避免「索引建了但用不了」
 - **能用 Postgres + pgvector** 做一套可用的向量檢索，並理解何時要升級到專用向量庫
 - **能用混合檢索 + rerank** 提升命中率，降低幻覺
-- **能在 Django 架構中落地**：單體/分離服務/背景任務/權限與審計/版本化
+- **能在 Django 架構中導入**：單體/分離服務/背景任務/權限與審計/版本化
 
 ## 章節導覽
 
@@ -52,12 +52,12 @@
 
 ### 06-評估與觀測（讓工程團隊能迭代）
 - `06-評估與觀測（讓工程團隊能迭代）/01-離線評估：Retrieval-Answer指標與資料集.md`
-- `06-評估與觀測（讓工程團隊能迭代）/02-線上評估：A-B-回饋閉環-人工標註流程.md`
+- `06-評估與觀測（讓工程團隊能迭代）/02-線上評估：A-B-回饋循環-人工標註流程.md`
 - `06-評估與觀測（讓工程團隊能迭代）/03-可觀測性：log-trace-命中率-失敗分類.md`
 
 ### 07-工程化與上線（Django+Postgres實作）
 - `07-工程化與上線（Django+Postgres實作）/01-系統切分：Ingest-Index-Retrieve-Generate服務邊界.md`
-- `07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector落地（schema-索引-查詢樣式）.md`
+- `07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector導入（schema-索引-查詢樣式）.md`
 - `07-工程化與上線（Django+Postgres實作）/03-Django整合：API設計-背景任務-快取-速率限制.md`
 - `07-工程化與上線（Django+Postgres實作）/04-效能與成本：快取-批次-串流-降延遲.md`
 - `07-工程化與上線（Django+Postgres實作）/05-安全合規：PII-權限-審計-提示注入防護.md`
@@ -68,10 +68,10 @@
 - `08-進階主題（了解主流走向）/02-多模態RAG（圖片-表格）.md`
 - `08-進階主題（了解主流走向）/03-Graph RAG與知識圖譜（何時值得）.md`
 
-### 09-導入既有場景（工程團隊落地配方）
-- `09-導入既有場景（工程團隊落地配方）/01-導入路線圖（PoC→試點→正式）.md`
-- `09-導入既有場景（工程團隊落地配方）/02-文件型知識庫配方（企業內規-手冊-規格）.md`
-- `09-導入既有場景（工程團隊落地配方）/03-研發型知識庫配方（issues-PRD-設計文-ADR）.md`
+### 09-導入既有場景（工程團隊導入配方）
+- `09-導入既有場景（工程團隊導入配方）/01-導入路線圖（PoC→試點→正式）.md`
+- `09-導入既有場景（工程團隊導入配方）/02-文件型知識庫配方（企業內規-手冊-規格）.md`
+- `09-導入既有場景（工程團隊導入配方）/03-研發型知識庫配方（issues-PRD-設計文-ADR）.md`
 
 ### 10-附錄
 - `10-附錄/01-Checklist（上線前-事故後）.md`
@@ -80,12 +80,12 @@
 
 ## 範例專案
 
-在 `rag-handbook/examples/django-rag-service/` 會提供最小可落地骨架（Postgres+pgvector、ingest/index、檢索 API、LLM 抽象介面）。
+在 `rag-handbook/examples/django-rag-service/` 會提供最小可直接導入骨架（Postgres+pgvector、ingest/index、檢索 API、LLM 抽象介面）。
 
 ## 本章小結
 
 - 本手冊的主線是「資料工程 → 檢索 → 生成可靠性 → 評估觀測 → 工程化上線」。
-- 以 Django + PostgreSQL + pgvector 作為可落地的起點，並明確標出可替換介面（LLM/Embedding/Rerank）。
+- 以 Django + PostgreSQL + pgvector 作為可直接導入的起點，並明確標出可替換介面（LLM/Embedding/Rerank）。
 - 每章以可交付工件與責任邊界為核心，方便做 code review 與上線驗收。
 
 ## 延伸閱讀

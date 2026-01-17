@@ -9,7 +9,7 @@
 ## 本章地圖
 
 - **適合用在**：要理解相似度/索引型別，或查詢很慢、命中怪怪時。
-- **你會做出**：相似度選擇與索引策略（含 pgvector 落地注意事項）。
+- **你會做出**：相似度選擇與索引策略（含 pgvector 導入注意事項）。
 - **最可能踩雷**：度量與正規化搞錯、索引未命中、top-k 設太大。
 
 ## 相似度是什麼
@@ -53,5 +53,5 @@ pgvector 或專用向量庫的差異，很多時候就在於：
 
 ## 延伸閱讀
 
-- [02-PostgreSQL+pgvector落地（schema-索引-查詢樣式）](../07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector落地（schema-索引-查詢樣式）.md)
+- [02-PostgreSQL+pgvector導入（schema-索引-查詢樣式）](../07-工程化與上線（Django+Postgres實作）/02-PostgreSQL+pgvector導入（schema-索引-查詢樣式）.md)
 - [02-top-k-filter-MMR-多路召回](../04-檢索策略（把找回來的內容變準）/02-top-k-filter-MMR-多路召回.md)

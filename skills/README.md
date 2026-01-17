@@ -4,7 +4,7 @@
 
 目前包含：
 
-- `handbook-authoring.md`：新增/改寫章節的寫作流程（對齊 `rag-handbook/STYLEGUIDE.md` 與 `rag-handbook/templates/chapter-template.md`）
+- `handbook-authoring.md`：新增/改寫章節的寫作流程（對準 `rag-handbook/STYLEGUIDE.md` 與 `rag-handbook/templates/chapter-template.md`）
 - `handbook-oreillyify.md`：用 `rag-handbook/scripts/oreillyify.py` 統一章節骨架（地圖/小結/延伸閱讀）
-- `mkdocs-preview-build-deploy.md`：本機預覽、嚴格建置、GitHub Pages 部署（對齊根目錄 `README.md`、`.github/workflows/deploy-mkdocs.yml`、`mkdocs.yml`）
+- `mkdocs-preview-build-deploy.md`：本機預覽、嚴格建置、GitHub Pages 部署（對準根目錄 `README.md`、`.github/workflows/deploy-mkdocs.yml`、`mkdocs.yml`）
 
