@@ -1,0 +1,55 @@
+site_name: RAG 手冊（從初學到可上線）
+site_description: 以 Python + Django + PostgreSQL 場景落地主流 RAG 的工程手冊
+
+# 直接用現有的手冊資料夾當 docs 來源，避免搬檔/重構
+docs_dir: rag-handbook
+site_dir: site
+
+theme:
+  name: material
+  language: zh-TW
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: 切換到深色模式
+    - scheme: slate
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: 切換到淺色模式
+
+plugins:
+  - search:
+      lang: zh
+
+# 不想出現在網站導覽裡的內容（範例專案、腳本、模板）
+exclude_docs: |
+  README.md
+  STYLEGUIDE.md
+  examples/**
+  scripts/**
+  templates/**
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.blocks.admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+
